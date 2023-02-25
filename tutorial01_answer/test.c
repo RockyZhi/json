@@ -45,6 +45,7 @@ static void test_parse_expect_value() {
     lept_value v;
 
     v.type = LEPT_FALSE;
+    // 若 lept_parse() 失败，会把 v 设为 null 类型
     EXPECT_EQ_INT(LEPT_PARSE_EXPECT_VALUE, lept_parse(&v, ""));
     EXPECT_EQ_INT(LEPT_NULL, lept_get_type(&v));
 
