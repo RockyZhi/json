@@ -18,6 +18,7 @@ static int test_pass = 0;
         }\
     } while(0)
 
+// 如果 expect != actual（预期值不等于实际值），便会输出错误信息
 #define EXPECT_EQ_INT(expect, actual) EXPECT_EQ_BASE((expect) == (actual), expect, actual, "%d")
 
 static void test_parse_null() {
