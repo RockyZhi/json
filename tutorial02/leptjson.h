@@ -3,6 +3,7 @@
 
 typedef enum { LEPT_NULL, LEPT_FALSE, LEPT_TRUE, LEPT_NUMBER, LEPT_STRING, LEPT_ARRAY, LEPT_OBJECT } lept_type;
 
+// 添加数字成员
 typedef struct {
     double n;
     lept_type type;

@@ -19,6 +19,7 @@ static int test_pass = 0;
     } while(0)
 
 #define EXPECT_EQ_INT(expect, actual) EXPECT_EQ_BASE((expect) == (actual), expect, actual, "%d")
+// %g是根据结果自动选择科学记数法还是一般的小数记数法。.17取17位小数？
 #define EXPECT_EQ_DOUBLE(expect, actual) EXPECT_EQ_BASE((expect) == (actual), expect, actual, "%.17g")
 
 static void test_parse_null() {
@@ -42,6 +43,7 @@ static void test_parse_false() {
     EXPECT_EQ_INT(LEPT_FALSE, lept_get_type(&v));
 }
 
+// 先解析，再看解析的结果类型是不是数字，数字和expect是不是一样
 #define TEST_NUMBER(expect, json)\
     do {\
         lept_value v;\
